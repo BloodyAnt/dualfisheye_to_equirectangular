@@ -42,6 +42,7 @@
 
 ### 2.2 环境搭建
 > 我们的代码仅仅依赖 **python3 + numpy + opencv + torch**
+
 **INSTALL.sh**
 
 ```
