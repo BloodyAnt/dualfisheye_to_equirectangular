@@ -10,7 +10,7 @@ We will explicitly define the task with input and output:
 Input: Given two images captured from fisheye lenses.
 Output: A stitched rectangular-mapped panoramic image (later, you can use this panoramic image for various creative edits)
 
-![Fisheye Image](assets/1.JPEG "Fisheye Image")
+![Fisheye Image](./1.JPEG "Fisheye Image")
 
 ## 2. Our Method
    
@@ -23,7 +23,7 @@ I first searched online for existing solutions and found a similar functionality
 **Aims:** To unwrap a fisheye image into a rectangular image, distortion correction or projection transformation is needed. Fisheye images typically use a specialized perspective projection, so they need to be transformed into a regular equidistant or rectilinear projection to obtain a rectangular image. This process usually involves calculating the position of each pixel in the new image and then copying the pixels from the fisheye image to their corresponding positions in the new image.
 **Method:** Our approach consists of two steps. The first step involves projecting the 2D image of the fisheye original image onto a 3D spherical surface. In the second step, we employ spherical perspective projection. We start by defining polar coordinates for points on the spherical surface, then calculate the Cartesian coordinates of these points, and finally compute the coordinates of the projected points using the mathematical formula for spherical perspective projection.
 
-![Distortion Image](assets/2.PNG "Distortion Image")
+![Distortion Image](./2.PNG "Distortion Image")
 
 #### 2.1.2 Feature Points Detection and Matching
 
@@ -41,7 +41,7 @@ I first searched online for existing solutions and found a similar functionality
 Aims:  to combine the two images obtained previously into a seamless and cohesive whole.
 Method: Our approach still involves two main steps: Image Alignment and Image Stitching. In the first step, Image Alignment, we use the information obtained from feature point matching to obtain a transformation matrix (homography matrix). This transformation can include translations, rotations, scaling, affine transformations, or perspective transformations to align the two images in the same coordinate system. In the second step, in most cases, the images in the overlap region are not perfectly aligned. Directly overlaying the overlap using a threshold would create seams at the stitching point. We employ the strategy of finding the best seam line.This process ensures that the two images are correctly aligned and seamlessly stitched together, resulting in a panoramic image.
 
-![Final Image](assets/3.PNG "Final Image")
+![Final Image](./3.PNG "Final Image")
 
 
 ### 2.2 Environment Setup
