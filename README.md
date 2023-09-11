@@ -21,6 +21,7 @@ I first searched online for existing solutions and found a similar functionality
 #### 2.1.1 Fisheye Camera Distortion Correction
 
 **Aims:** To unwrap a fisheye image into a rectangular image, distortion correction or projection transformation is needed. Fisheye images typically use a specialized perspective projection, so they need to be transformed into a regular equidistant or rectilinear projection to obtain a rectangular image. This process usually involves calculating the position of each pixel in the new image and then copying the pixels from the fisheye image to their corresponding positions in the new image.
+
 **Method:** Our approach consists of two steps. The first step involves projecting the 2D image of the fisheye original image onto a 3D spherical surface. In the second step, we employ spherical perspective projection. We start by defining polar coordinates for points on the spherical surface, then calculate the Cartesian coordinates of these points, and finally compute the coordinates of the projected points using the mathematical formula for spherical perspective projection.
 
 ![Distortion Image](./2.PNG "Distortion Image")
@@ -28,6 +29,7 @@ I first searched online for existing solutions and found a similar functionality
 #### 2.1.2 Feature Points Detection and Matching
 
 **Aims:** We have converted two fisheye images into two rectangular images, but they are not aligned at the edges. Here, we assume that there is an overlap in the edge regions of the two images, and we need to find the alignment transformation that allows them to perfectly overlap in this overlap area.
+
 **Method:** Our approach still consists of two steps. The first step involves detecting feature points within the overlap region to establish a correspondence between the two images. Feature points are typically locations in the image with unique structures or textures, such as corners, edges, keypoints, etc. In the second step, we use the feature descriptors of these feature points for matching. We support the following three methods:
 
 |   Feature Points Detection |    Matching    |
@@ -38,8 +40,9 @@ I first searched online for existing solutions and found a similar functionality
 
 #### 2.1.3 Alignment and Stitching
 
-Aims:  to combine the two images obtained previously into a seamless and cohesive whole.
-Method: Our approach still involves two main steps: Image Alignment and Image Stitching. In the first step, Image Alignment, we use the information obtained from feature point matching to obtain a transformation matrix (homography matrix). This transformation can include translations, rotations, scaling, affine transformations, or perspective transformations to align the two images in the same coordinate system. In the second step, in most cases, the images in the overlap region are not perfectly aligned. Directly overlaying the overlap using a threshold would create seams at the stitching point. We employ the strategy of finding the best seam line.This process ensures that the two images are correctly aligned and seamlessly stitched together, resulting in a panoramic image.
+**Aims:**  to combine the two images obtained previously into a seamless and cohesive whole.
+
+**Method:** Our approach still involves two main steps: Image Alignment and Image Stitching. In the first step, Image Alignment, we use the information obtained from feature point matching to obtain a transformation matrix (homography matrix). This transformation can include translations, rotations, scaling, affine transformations, or perspective transformations to align the two images in the same coordinate system. In the second step, in most cases, the images in the overlap region are not perfectly aligned. Directly overlaying the overlap using a threshold would create seams at the stitching point. We employ the strategy of finding the best seam line.This process ensures that the two images are correctly aligned and seamlessly stitched together, resulting in a panoramic image.
 
 ![Final Image](./3.PNG "Final Image")
 
