@@ -1,5 +1,10 @@
 > [中文介绍](README_cn.md)  
 
+## What's New: 🎉 
+ * [GUI Release] December 2023 <br>
+[Video Demo](https://www.youtube.com/watch?v=gEuBC6H23GY)
+> A simple, yet strong, panoramic stitching  framework based on dual-fisheye image. Our source code provides algorithms and GUI, which is shown in the video link above.
+  
 ## 1. Introduction
 
 VR is a popular imaging technology , where each frame captures a 360-degree perspective. But how is such imagery captured in the industrial sector? Currently, the blogger understands two main approaches:
@@ -49,9 +54,9 @@ I first searched online for existing solutions and found a similar functionality
 
 ### 2.2 Environment Setup
 
-> Language: >=python3.8
-> Dependencies:numpy + opencv + torch + pyside6(GUI)
-> OS support: windows OS/linux OS/macOS 
+* Language: >=python3.8
+* Dependencies:numpy + opencv + torch + pyside6(GUI)
+* OS support: windows OS/linux OS/macOS 
 
 **INSTALL.sh**
 
