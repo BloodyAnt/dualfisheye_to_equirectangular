@@ -49,7 +49,9 @@ I first searched online for existing solutions and found a similar functionality
 
 ### 2.2 Environment Setup
 
-> python3 + numpy + opencv + torch
+> Language: >=python3.8
+> Dependencies:numpy + opencv + torch + pyside6(GUI)
+> OS support: windows OS/linux OS/macOS 
 
 **INSTALL.sh**
 
